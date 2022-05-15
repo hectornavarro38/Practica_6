@@ -1,0 +1,39 @@
+import cv2
+import numpy as np
+
+def camera (HSVmin,HSVmax):
+     while True:
+        _, frame = cap.read()
+        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        lower_red = np.array([HSVmin,150,150])
+        upper_red = np.array([HSVmax,255,255])
+
+        mask = cv2.inRange(hsv, lower_red, upper_red)
+        res = cv2.bitwise_and(frame, frame, mask = mask)
+
+        cv2.imshow('frame', frame)
+        cv2.imshow('mask', mask)
+        cv2.imshow('res', res)
+
+        if cv2.waitKey(1) & 0xFF == ord('k'):
+                    break
+            
+     cap.release()
+     cv2.destroyAllWindows()
+    
+cap = cv2.VideoCapture(0)
+op = int(input("Rojo(1) - Verde (2) - Azul (3) - Amarillo (4) - Rosa (5):"))
+
+if op == 1:
+    camera(150,180)
+
+elif op == 2:
+    camera(41,68)
+    
+elif op == 3:
+    camera(91,139)
+    
+elif op == 4:
+    camera(31,39)
+elif op == 5:
+     camera(151,159)
