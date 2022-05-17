@@ -1,0 +1,8 @@
+#Al principio se pone el rango de los que va a detectar.
+        HSV (matiz, saturación, valor)
+          H: 0 a 179
+          S: 0 a 255
+          V: 0 a 255+
+          (H) modela el tipo de color, es muy útil en tareas de procesamiento de imágenes que necesitan segmentar objetos en función de su color.
+          (S) puede entenderse como qué tan fuerte es el color que vemos; pasa de no saturada a representar sombras de gris y completamente saturada (sin componente blanco).
+          (V) describe el brillo o la intensidad del color.
